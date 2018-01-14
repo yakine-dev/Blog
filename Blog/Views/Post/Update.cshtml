@@ -1,0 +1,22 @@
+﻿@model Blog.Models.Post
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+@using (Html.BeginForm("Update", "Post", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(model => model.Titre)
+        <br />
+        @Html.TextBoxFor(model => model.Titre)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Contenu)
+        <br />
+        @Html.TextAreaFor(model => model.Contenu)
+    </p>
+    @Html.HiddenFor(model => model.Id)
+    <button type="submit">Modifier</button>
+}
+

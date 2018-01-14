@@ -1,0 +1,33 @@
+﻿@model List<Blog.Models.Post>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<br/>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Titre</th>
+        <th>Contenu</th>
+        <th>Date de cfeation</th>
+        <th>Date de modification</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+       @foreach (var p in Model)
+       {
+           <tr>
+               <td>@p.Id</td>
+               <td>@p.Titre</td>
+               <td>@p.Contenu</td>
+               <td>@p.DateCreation</td>
+               <td>@p.DateModification</td>
+               <td><a href="/Post/Delete/@p.Id">Supprimer</a></td>
+           </tr>
+       }
+    </tbody>
+</table>
+

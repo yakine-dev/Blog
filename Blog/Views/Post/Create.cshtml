@@ -1,0 +1,23 @@
+﻿@model Blog.Models.Post
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "Post", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(model => model.Titre)
+        <br/>
+        @Html.TextBoxFor(model => model.Titre)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Contenu)
+        <br/>
+        @Html.TextAreaFor(model => model.Contenu)
+    </p>
+    <button type="submit">Ajouter</button>
+}
+
